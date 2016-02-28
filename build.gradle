@@ -1,0 +1,52 @@
+
+buildscript {
+    ext.kotlin_version = '1.0.0'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+plugins {
+    id "org.jetbrains.intellij" version "0.0.39"
+}
+
+intellij {
+    version 'IC-15.0.4'
+    pluginName 'diagnostic'
+
+    systemProperty('idea.paths.selector', 'debug-ide')
+
+    publish {
+        username 'zolotov'
+        password 'password'
+        pluginId '5047'
+    }
+}
+
+
+group 'com.cursive-ide'
+version '1.0.0'
+
+apply plugin: 'org.jetbrains.intellij'
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile ('org.kohsuke:youdebug:1.5') {
+        exclude group: 'junit'
+        exclude group: 'jline'
+        exclude group: 'org.apache.ant'
+    }
+}

@@ -1,0 +1,10 @@
+.idea/workspace.xml
+.idea/replstate.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/dictionaries
+.idea/libraries
+.idea/shelf
+.gradle
+build
+.DS_Store
+*.iml
