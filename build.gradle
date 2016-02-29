@@ -21,6 +21,8 @@ intellij {
 
     systemProperty('idea.paths.selector', 'debug-ide')
 
+    updateSinceUntilBuild false
+
     publish {
         username 'zolotov'
         password 'password'
